@@ -1,0 +1,12 @@
+ls -g -G -k *.jp2| awk '{print $3 "\t" $7}' > list_of_jp2_files-sizes_and_names.tsv
+# generates tab delimited file like the example below where the filesizes are listed
+# in kilobytes
+#
+# 4297864	Test_Job_0006_46.jp2
+# 6086802	Test_Job_0007_46.jp2
+# 4343123	Test_Job_0008_46.jp2
+# 6425775	Test_Job_0009_46.jp2
+# 7025360	Test_Job_0010_46.jp2
+# 6290784	Test_Job_0011_46.jp2
+# 6870090	Test_Job_0012_46.jp2
+# 5192435	Test_Job_0013_46.jp2
