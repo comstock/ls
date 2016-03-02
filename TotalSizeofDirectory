@@ -1,0 +1,1 @@
+ ls -l -S --quote-name --recursive --no-group * |  awk '{sum += $4} END {print "total GB = " sum/1024/1024/1024}'
