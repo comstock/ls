@@ -1,0 +1,7 @@
+#!/bin/bash
+# Generate a listing of file extensions found in the current
+# directory, and all subdirectories.
+#
+ls -l --human-readable -S --quote-name --no-group * | awk '{
+if($4 > 0 && $3 == "comstock") #filesize not 0, therefore not a dir
+print $0;}'| sed -r s'/^.*\.([a-zA-Z0-9~#]{1,5})\"$/\1/';
