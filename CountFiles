@@ -1,0 +1,2 @@
+# Count all the files in the current directory tree
+ls -1 --recursive |awk 'END{print "Total number of files, including files in subdirectories: "NR}'
