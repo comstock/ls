@@ -14,5 +14,6 @@ print $4 "\t" $8 " " $9 " " $10 " " $11 " " $12 " " $13 " " $14 " " $15 " " $16 
 #else if($3 == "comstock")
 #print $4 "\t" $8;
 else
-print $0;}'
-# uncomment to save output to file# > directory_listing.txt
+print $0;}' > directory_listing.txt;
+#cat ./directory_listing.txt | less
+
