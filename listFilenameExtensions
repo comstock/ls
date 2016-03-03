@@ -4,5 +4,5 @@
 #
 ls --recursive -l --human-readable -S --quote-name --no-group * | awk '{
 if($4 > 0 && $3 == "comstock") #filesize not 0, therefore not a dir
-print $0;}'| sed -r s'/^.*\.([a-zA-Z0-9~#]{1,5})\"$/\1/' > listFilenameExtensions.txt
-#cat ./listFilenameExtensions.txt
+print $0;}'| sed -r s'/^.*\.([a-zA-Z0-9]{1,5})\"$/\1/'| sed -r s'/\".{6,100}$\n//' | sed '/.*\".{6,100}\"/d' | sed -r s'/.*[#~]\"$//'| sed '/-rwx.*/d' | sed '/^$/d' | tr '[:upper:]' '[:lower:]' > listFilenameExtensions.txt
+cat ./listFilenameExtensions.txt | less
