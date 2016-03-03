@@ -9,8 +9,8 @@
 # BUG : When a name includes a blank space it will think the name spans multiple columns
 #
 ls -l --human-readable -S --quote-name --recursive --no-group * | awk '{
-if($8 ~ /\".*[.\.\s{1,3}].*\"/)
-print $4 "\t" $8;
+if($8 ~ /\".*/)
+print $4 "\t" $8 " " $9 " " $10 " " $11 " " $12 " " $13 " " $14 " " $15 " " $16 " " $17 " " $18 " " $19 " " $20 " " $21 " " $22 " " $23 " " $24;
 #else if($3 == "comstock")
 #print $4 "\t" $8;
 else
