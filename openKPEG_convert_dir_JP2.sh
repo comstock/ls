@@ -8,6 +8,9 @@
 # 5. Output indicators of progress in std out
 # 6. Delete list of files
 #
+# TO DO
+# force extensions to lowercase
+#
 inFILE="fileList.txt"
 ls -1 | grep --ignore-case --extended-regexp '(tif$|tiff$|jpg$|jpeg$|png$)' > $inFILE
 #
