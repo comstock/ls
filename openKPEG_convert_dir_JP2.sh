@@ -9,7 +9,8 @@
 # 6. Delete list of files
 #
 # TO DO
-# force extensions to lowercase
+# 1. force extensions to lowercase
+# 2. generate a runtime log? grab start and end times?
 #
 inFILE="fileList.txt"
 ls -1 | grep --ignore-case --extended-regexp '(tif$|tiff$|jpg$|jpeg$|png$)' > $inFILE
