@@ -4,7 +4,7 @@
 # Add packages
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y glabels lynx cifs-utils seahorse-nautilus gpa gnupg2 libpam-google-authenticator network-manager-openconnect-gnome build-essential libjpeg-dev default-jre network-manager-vpnc network-manager-vpnc-gnome tree liblcms2-dev libtiff-dev libpng-dev libopenjp2-tools enscript libtiff-tools imagemagick jasper httpie cups cmake imagemagick leptonica-progs autoconf-archive libpng-dev libleptonica-dev tesseract-ocr golang-go hugo pandoc shotwell tesseract-ocr-all graphicsmagick feh autokey-gtk gimp liblcms2-dev libtiff-dev libpng-dev libz-dev git curl chromium-browser emacs
+sudo apt-get install -y glabels lynx cifs-utils seahorse-nautilus gpa gnupg2 libpam-google-authenticator network-manager-openconnect-gnome build-essential libjpeg-dev default-jre network-manager-vpnc network-manager-vpnc-gnome tree liblcms2-dev libtiff-dev libpng-dev libopenjp2-tools enscript libtiff-tools imagemagick jasper httpie cups cmake imagemagick leptonica-progs autoconf-archive libpng-dev libleptonica-dev tesseract-ocr golang-go hugo pandoc shotwell tesseract-ocr-all graphicsmagick feh autokey-gtk gimp liblcms2-dev libtiff-dev libpng-dev libz-dev git curl chromium-browser emacs gdebi-core
 #
 # Google Cloud Apps installation
 # Create environment variable for correct distribution
@@ -32,3 +32,11 @@ rm -r -f openjpeg
 fi
 git clone https://github.com/uclouvain/openjpeg.git 
 cd openjpeg ; mkdir build ; cd build ; cmake .. -DMAKE_BUILD_TYPE=Release ; sudo make install ; sudo make clean
+
+# R language and RStudio
+sudo add-apt-repository ppa:marutter/rrutter
+sudo apt-get install -y r-base r-base-dev
+
+wget https://download1.rstudio.org/rstudio-xenial-1.1.456-amd64.deb
+sudo gdebi rstudio-xenial-1.1.456-amd64.deb ; rm rstudio-xenial-1.1.456-amd64.deb
+
