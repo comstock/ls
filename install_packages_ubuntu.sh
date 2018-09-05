@@ -36,7 +36,7 @@ cd openjpeg ; mkdir build ; cd build ; cmake .. -DMAKE_BUILD_TYPE=Release ; sudo
 # R language and RStudio
 sudo add-apt-repository ppa:marutter/rrutter
 sudo apt-get install -y r-base r-base-dev
-
-wget https://download1.rstudio.org/rstudio-xenial-1.1.456-amd64.deb
-sudo gdebi rstudio-xenial-1.1.456-amd64.deb ; rm rstudio-xenial-1.1.456-amd64.deb
+# download current RStudio version at https://www.rstudio.com/products/rstudio/download/#download
+# wget https://download1.rstudio.org/rstudio-xenial-1.1.456-amd64.deb
+# sudo gdebi rstudio-xenial-1.1.456-amd64.deb ; rm rstudio-xenial-1.1.456-amd64.deb
 
