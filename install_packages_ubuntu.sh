@@ -2,18 +2,33 @@
 # Script to add key packages to a new Ubuntu install
 #
 # Add packages
-sudo apt-get install -y glabels lynx cifs-utils seahorse-nautilus gpa gnupg2 libpam-google-authenticator network-manager-openconnect-gnome build-essential libjpeg-dev default-jre network-manager-vpnc network-manager-vpnc-gnome tree liblcms2-dev libtiff-dev libpng-dev libopenjp2-tools enscript libtiff-tools imagemagick jasper google-cloud-sdk httpie cups cmake imagemagick leptonica-progs autoconf-archive libpng-dev libleptonica-dev tesseract-ocr golang-go hugo pandoc shotwell tesseract-ocr-all graphicsmagick feh google-cloud-sdk openjpeg-tools autokey-gtk gimp liblcms2-dev libtiff-dev libpng-dev libz-dev git curl
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y glabels lynx cifs-utils seahorse-nautilus gpa gnupg2 libpam-google-authenticator network-manager-openconnect-gnome build-essential libjpeg-dev default-jre network-manager-vpnc network-manager-vpnc-gnome tree liblcms2-dev libtiff-dev libpng-dev libopenjp2-tools enscript libtiff-tools imagemagick jasper httpie cups cmake imagemagick leptonica-progs autoconf-archive libpng-dev libleptonica-dev tesseract-ocr golang-go hugo pandoc shotwell tesseract-ocr-all graphicsmagick feh autokey-gtk gimp liblcms2-dev libtiff-dev libpng-dev libz-dev git curl chromium-browser
 #
 # Google Cloud Apps installation
-sudo apt-get install curl -y ; export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"; echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list; curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+# Create environment variable for correct distribution
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+
+# Add the Cloud SDK distribution URI as a package source
+echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# Import the Google Cloud Platform public key
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# Update the package list and install the Cloud SDK
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+
 #
 # Add OpenJpeg
 cd
-if [ ! -d "install" ] ; then mkdir install
+if [ ! -d "install" ] ; then
+mkdir install
 fi
 cd install
 
-if [ -d "openjpeg" ] ; then rm -r openjpeg
-
-git clone sudohttps://github.com/uclouvain/openjpeg.git 
-cd openjpeg ; mkdir build ; cd build ; cmake .. -DMAKE_BUILD_TYPE=Release ; make install ; make clean ; make doc
+if [ -d "openjpeg" ] ; then
+rm -r -f openjpeg
+fi
+git clone https://github.com/uclouvain/openjpeg.git 
+cd openjpeg ; mkdir build ; cd build ; cmake .. -DMAKE_BUILD_TYPE=Release ; sudo make install ; sudo make clean
