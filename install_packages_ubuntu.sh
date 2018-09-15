@@ -1,12 +1,13 @@
 #!/bin/bash
 # Script to add key packages to a new Ubuntu install
 #
-sudo add-apt-repository ppa:webupd8team/atom -y
+sudo add-apt-repository ppa:webupd8team/atom -y # Atom
+sudo add-apt-repository ppa:dhor/myway -y       # Raw Therapy
 
 # Add packages
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y atom glabels lynx cifs-utils seahorse-nautilus gpa gnupg2 libpam-google-authenticator network-manager-openconnect-gnome build-essential libjpeg-dev default-jre network-manager-vpnc network-manager-vpnc-gnome tree liblcms2-dev libtiff-dev libpng-dev libopenjp2-tools enscript libtiff-tools imagemagick jasper httpie cups cmake imagemagick leptonica-progs autoconf-archive libpng-dev libleptonica-dev tesseract-ocr golang-go hugo pandoc shotwell tesseract-ocr-all graphicsmagick feh autokey-gtk gimp liblcms2-dev libtiff-dev libpng-dev libz-dev git curl chromium-browser emacs gdebi-core argyll
+sudo apt-get install -y ufraw rawtherapee atom glabels lynx cifs-utils seahorse-nautilus gpa gnupg2 libpam-google-authenticator network-manager-openconnect-gnome build-essential libjpeg-dev default-jre network-manager-vpnc network-manager-vpnc-gnome tree liblcms2-dev libtiff-dev libpng-dev libopenjp2-tools enscript libtiff-tools imagemagick jasper httpie cups cmake imagemagick leptonica-progs autoconf-archive libpng-dev libleptonica-dev tesseract-ocr golang-go hugo pandoc shotwell tesseract-ocr-all graphicsmagick feh autokey-gtk gimp liblcms2-dev libtiff-dev libpng-dev libz-dev git curl chromium-browser emacs gdebi-core argyll
 #
 # Google Cloud Apps installation
 # Create environment variable for correct distribution
