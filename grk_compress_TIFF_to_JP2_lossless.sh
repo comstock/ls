@@ -1,4 +1,5 @@
-#!/bin/bash                                                                                                           
+#!/bin/bash
+# Grok Image Compression JP2 JPEG2000 codec encoder
 find . -type f | grep --extended-regexp ".*\.tif$" | sed -E "s/.tif//g" > tiffNameStem.txt
 ls -1 *.tif | wc -l | xargs echo "TIFF count: "
 while read line
